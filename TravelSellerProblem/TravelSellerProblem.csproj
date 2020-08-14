@@ -55,7 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="models\ConfigurationGA.cs" />
+    <Compile Include="models\GeneticAlgorithm.cs" />
+    <Compile Include="models\Individual.cs" />
+    <Compile Include="models\Population.cs" />
     <Compile Include="models\TablePoints.cs" />
+    <Compile Include="models\Utils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

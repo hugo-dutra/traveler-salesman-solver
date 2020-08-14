@@ -30,9 +30,13 @@ namespace TravelSellerProblem
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {            
+
             Pen blackPen = new Pen(Color.Red, 3);
             int x = e.X;
             int y = e.Y;
+            TablePoints.addPoint(x, y);
+            TablePoints.print();
+
             Rectangle rect = new Rectangle(x - 5, y - 5, 10, 10);
             g.DrawEllipse(blackPen, rect);
             g.DrawString((pointCount + 1).ToString(),new Font("Arial Black",11),Brushes.Black,x+3,y);
@@ -46,7 +50,6 @@ namespace TravelSellerProblem
 
             btnCriarPop.Enabled = pointCount >= 3 ? true : false;
             btnLimpar.Enabled = pointCount >= 1 ? true : false;
-
         }
 
         private ulong Fatorial(ulong number)
@@ -54,6 +57,17 @@ namespace TravelSellerProblem
             if (number <= 1)
                 return 1;
             else return number * Fatorial(number - 1);
+        }
+
+        private void btnCriarPop_Click(object sender, EventArgs e)
+        {
+            Individual ind1 = new Individual();
+            Console.WriteLine(ind1);
+            ConfigurationGA.rateMutation = 1;
+
+            GeneticAlgorithm AG = new GeneticAlgorithm();
+            ind1 = AG.Mutation(ind1);
+            Console.WriteLine(ind1);
         }
 
         /*
